@@ -409,13 +409,19 @@ test("MQTT / UAV integration", { concurrency: false }, async (t) => {
   await t.test("Remote MQTT commands: ARM → TAKEOFF → LAND → DISARM", async () => {
     drone.setBattery(100);
 
-    const arm = await sendMqttCommand(externalTransport, DEVICE_ID, "arm");
-    assert.equal(arm.type, "command-result");
-    assert.equal(arm.data.success, true);
-    assert.notEqual(arm.correlationId, undefined);
+   const armTwinPromise = waitForMessage(
+  externalTransport,
+  twinTopic,
+  (message) => getTwinState(message).armed === true,
+);
 
-    await waitForMessage(externalTransport, twinTopic, (message) => getTwinState(message).armed === true);
-    assert.equal(drone.isArmed(), true);
+const arm = await sendMqttCommand(externalTransport, DEVICE_ID, "arm");
+assert.equal(arm.type, "command-result");
+assert.equal(arm.data.success, true);
+assert.notEqual(arm.correlationId, undefined);
+
+await armTwinPromise;
+assert.equal(drone.isArmed(), true);
 
     const takeoff = await sendMqttCommand(externalTransport, DEVICE_ID, "takeoff");
     assert.equal(takeoff.data.success, true);
