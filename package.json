@@ -1,0 +1,27 @@
+{
+  "name": "iotkit",
+  "version": "1.0.0",
+  "description": "IoT device toolkit",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "aedes": "^1.2.0",
+    "mqtt": "^5.16.0"
+  }
+}
