@@ -10,15 +10,16 @@ import {
   FleetController,
   FleetManager,
   IotKitController,
-  MqttTransport,
   MqttTopicBuilder
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
 
 import type {
   CommandResultData,
   MessageEnvelope,
   TransportMessage
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
+
+import { MqttTransport } from "@iotkit/mqtt";
 
 const MQTT_URL = "mqtt://127.0.0.1:1884";
 const MQTT_PORT = 1884;

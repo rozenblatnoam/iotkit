@@ -85,11 +85,6 @@ export type {
   DeviceTransportOptions
 } from "./DeviceTransport.js";
 
-export { MqttTransport } from "./mqtt/MqttTransport.js";
-export type {
-  MqttTransportOptions
-} from "./mqtt/MqttTransport.js";
-
 export {
   createMessage,
   isMessageEnvelope,
@@ -124,9 +119,9 @@ export type {
   ProtocolErrorEvent
 } from "./Controller.js";
 
-export { EvoMaxSimulator } from "../uav/EvoMaxSimulator.js";
+export { EvoMaxSimulator } from "./uav/EvoMaxSimulator.js";
 export type {
   EvoMaxSimulatorOptions,
   EvoMaxFlightMode,
   EvoMaxPosition
-} from "../uav/EvoMaxSimulator.js";
+} from "./uav/EvoMaxSimulator.js";

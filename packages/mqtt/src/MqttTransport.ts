@@ -10,7 +10,7 @@ import type {
   TransportMessage,
   TransportMessageHandler,
   TransportPublishOptions
-} from "../Transport.js";
+} from "@iotkit/core";
 
 export interface MqttTransportOptions {
   url: string;

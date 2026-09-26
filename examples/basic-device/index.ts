@@ -5,7 +5,7 @@ import {
   Capability,
   Rule,
   DeviceRegistry
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
 
 // --------------------------------------------------
 // Device Registry

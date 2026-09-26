@@ -1,0 +1,16 @@
+{
+  "name": "@iotkit/cli",
+  "version": "1.0.0",
+  "description": "IoTKit command-line interface",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "iotkit": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist --rootDir src"
+  },
+  "dependencies": {
+    "@iotkit/core": "0.1.0"
+  }
+}

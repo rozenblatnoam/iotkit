@@ -1,24 +1,31 @@
 {
   "name": "iotkit",
   "version": "1.0.0",
-  "description": "IoT device toolkit",
+  "description": "IoT device toolkit monorepo",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:core && npm run build:mqtt && npm run build:cli",
+    "build:core": "npm run build --workspace=@iotkit/core",
+    "build:cli": "npm run build --workspace=@iotkit/cli",
+    "test": "npm run build:core && npm run build:mqtt && tsx --test packages/tests/*.test.ts",
+    "build:mqtt": "npm run build --workspace=@iotkit/mqtt"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "iot",
+    "iotkit",
+    "mqtt",
+    "typescript"
+  ],
+  "author": "Noam Rozenblat",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.6.2",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2",
-    "vitest": "^5.0.1"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "aedes": "^1.2.0",

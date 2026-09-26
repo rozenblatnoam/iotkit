@@ -1,11 +1,15 @@
 {
   "name": "@iotkit/mqtt",
   "version": "0.1.0",
-  "description": "MQTT transport for iotkit",
+  "description": "MQTT transport for IoTKit",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
+    "@iotkit/core": "0.1.0",
     "mqtt": "^5.0.0"
   }
 }

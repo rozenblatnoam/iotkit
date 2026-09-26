@@ -1,7 +1,7 @@
-import { Device } from "../src/Device.js";
-import { Sensor } from "../src/Sensor.js";
-import { Capability } from "../src/Capability.js";
-import { Rule } from "../src/Rule.js";
+import { Device } from "../Device.js";
+import { Sensor } from "../Sensor.js";
+import { Capability } from "../Capability.js";
+import { Rule } from "../Rule.js";
 
 export type EvoMaxFlightMode =
   | "idle"

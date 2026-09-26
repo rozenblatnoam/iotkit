@@ -1,6 +1,6 @@
 import {
   EvoMaxSimulator
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
 
 // --------------------------------------------------
 // Create simulated EVO Max

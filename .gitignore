@@ -1,9 +1,29 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+**/dist/
+
+# TypeScript generated files
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+
+# Environment
 .env
 .env.*
 !.env.example
+
+# Logs
 *.log
+
+# Test / coverage
 coverage/
+
+# IDE
 .vscode/
+
+# OS
 .DS_Store

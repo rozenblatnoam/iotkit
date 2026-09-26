@@ -12,15 +12,16 @@ import {
   FleetController,
   FleetManager,
   IotKitController,
-  MqttTransport,
   MqttTopicBuilder,
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
+
+import { MqttTransport } from "@iotkit/mqtt";
 
 import type {
   CommandResultData,
   MessageEnvelope,
   TransportMessage,
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
 
 interface CommandMessageData {
   command: string;

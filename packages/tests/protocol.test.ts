@@ -5,7 +5,7 @@ import {
   createMessage,
   decodeMessage,
   encodeMessage,
-} from "../../packages/core/src/index.js";
+} from "@iotkit/core";
 
 // NOTE: this file is intended to live under the project root at /tests.
 // The generated file uses ../packages/... relative to /tests.
