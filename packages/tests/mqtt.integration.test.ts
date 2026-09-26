@@ -7,13 +7,16 @@ import {
   createMessage,
   decodeMessage,
   encodeMessage,
-  DeviceTransport,
-  EvoMaxSimulator,
   FleetController,
   FleetManager,
   IotKitController,
-  MqttTopicBuilder,
 } from "@iotkit/core";
+
+import {
+  DeviceTransport,
+  EvoMaxSimulator,
+  MqttTopicBuilder,
+} from "@iotkit/core/advanced";
 
 import { MqttTransport } from "@iotkit/mqtt";
 
