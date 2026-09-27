@@ -36,8 +36,9 @@ export class TelemetryManager {
       value,
       timestamp:
         options.timestamp ?? new Date(),
-      metadata:
-        options.metadata ?? {}
+      metadata: {
+        ...(options.metadata ?? {})
+      }
     };
 
     const record:

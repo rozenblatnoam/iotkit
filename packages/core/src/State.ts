@@ -69,13 +69,47 @@ export class StateManager {
   delete(
     key: string
   ): boolean {
-    return this.values.delete(
-      key
+    if (!this.values.has(key)) {
+      return false;
+    }
+
+    const previousValue =
+      this.values.get(key);
+
+    this.values.delete(key);
+
+    this.events.emit(
+      "change",
+      {
+        key,
+        value: undefined,
+        previousValue,
+        timestamp: new Date()
+      } satisfies StateChangeEvent
     );
+
+    return true;
   }
 
   clear(): void {
-    this.values.clear();
+    for (
+      const [
+        key,
+        previousValue
+      ] of this.values
+    ) {
+      this.values.delete(key);
+
+      this.events.emit(
+        "change",
+        {
+          key,
+          value: undefined,
+          previousValue,
+          timestamp: new Date()
+        } satisfies StateChangeEvent
+      );
+    }
   }
 
   getAll(): Record<string, unknown> {

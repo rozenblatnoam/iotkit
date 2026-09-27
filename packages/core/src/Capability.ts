@@ -7,16 +7,16 @@ export interface CapabilityOptions {
 export class Capability {
   readonly id: string;
   readonly type: string;
-  readonly metadata:
-    Record<string, unknown>;
+  private readonly metadata: Record<string, unknown>;
 
   constructor(
     options: CapabilityOptions
   ) {
     this.id = options.id;
     this.type = options.type;
-    this.metadata =
-      options.metadata ?? {};
+    this.metadata = {
+      ...(options.metadata ?? {})
+    };
   }
 
   getMetadata<T = unknown>(
