@@ -11,5 +11,8 @@
   "dependencies": {
     "@iotkit/core": "0.1.0",
     "mqtt": "^5.0.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
