@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@iotkit/core",
   "version": "0.1.0",
   "description": "Core framework for building JavaScript and TypeScript IoT applications",
@@ -20,5 +20,6 @@
   },
   "scripts": {
     "build": "tsc"
-  }
+  },
+  "license": "ISC"
 }
